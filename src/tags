@@ -1,0 +1,89 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$(DUMPTRG)	Makefile	/^$(DUMPTRG): $(TRG) $/;"	t
+$(GDBINITFILE)	Makefile	/^$(GDBINITFILE): $(TRG)$/;"	t
+$(TRG)	Makefile	/^$(TRG): $(OBJDEPS) $/;"	t
+%.s	Makefile	/^%.s: %.S$/;"	t
+%.s	Makefile	/^%.s: %.c$/;"	t
+.PHONY	Makefile	/^.PHONY: writeflash clean stats gdbinit stats$/;"	t
+.S.o	Makefile	/^.S.o :$/;"	t
+.SUFFIXES	Makefile	/^.SUFFIXES : .c .cc .cpp .C .o .out .s .S \\$/;"	t
+.c.o	Makefile	/^.c.o: $/;"	t
+.out.ee.hex	Makefile	/^.out.ee.hex:$/;"	t
+.out.hex	Makefile	/^.out.hex:$/;"	t
+ASMFILES	Makefile	/^ASMFILES=$(filter %.S, $(PRJSRC))$/;"	m
+ASMFLAGS	Makefile	/^ASMFLAGS =-I. $(INC) -mmcu=$(MCU)        \\$/;"	m
+AVRDUDE	Makefile	/^AVRDUDE=avrdude$/;"	m
+AVRDUDE_PORT	Makefile	/^AVRDUDE_PORT=\/dev\/ttyS0$/;"	m
+AVRDUDE_PROGRAMMERID	Makefile	/^AVRDUDE_PROGRAMMERID=ponyser$/;"	m
+AVR_EFUSE	Makefile	/^AVR_EFUSE=0xf9$/;"	m
+AVR_HFUSE	Makefile	/^AVR_HFUSE=0xd7$/;"	m
+AVR_LFUSE	Makefile	/^AVR_LFUSE=0xff$/;"	m
+BAUD_DOUBLE	config.h	6;"	d
+BAUD_PRESCALE	config.h	5;"	d
+BIGCFILES	Makefile	/^BIGCFILES=$(filter %.C, $(PRJSRC))$/;"	m
+CC	Makefile	/^CC=avr-gcc$/;"	m
+CCFILES	Makefile	/^CCFILES=$(filter %.cc, $(PRJSRC))$/;"	m
+CFILES	Makefile	/^CFILES=$(filter %.c, $(PRJSRC))$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-I. $(INC) -g -mmcu=$(MCU) -O$(OPTLEVEL) \\$/;"	m
+CPPFILES	Makefile	/^CPPFILES=$(filter %.cpp, $(PRJSRC))$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS=-fno-exceptions               \\$/;"	m
+DUMPTRG	Makefile	/^DUMPTRG=$(PROJECTNAME).s$/;"	m
+F_CPU	config.h	2;"	d
+GDBINITFILE	Makefile	/^GDBINITFILE=gdbinit-$(PROJECTNAME)$/;"	m
+GENASMFILES	Makefile	/^GENASMFILES=$(filter %.s, $(OBJDEPS:.o=.s)) $/;"	m
+HEXFORMAT	Makefile	/^HEXFORMAT=ihex$/;"	m
+HEXROMTRG	Makefile	/^HEXROMTRG=$(PROJECTNAME).hex $/;"	m
+HEXTRG	Makefile	/^HEXTRG=$(HEXROMTRG) $(PROJECTNAME).ee.hex$/;"	m
+INC	Makefile	/^INC=$/;"	m
+ISR	uart.c	/^ISR(USART_RX_vect) {$/;"	f
+ISR	uart.c	/^ISR(USART_TX_vect) {$/;"	f
+LDFLAGS	Makefile	/^LDFLAGS=-Wl,-Map,$(TRG).map -mmcu=$(MCU) \\$/;"	m
+LIBS	Makefile	/^LIBS=$/;"	m
+LST	Makefile	/^LST=$(filter %.lst, $(OBJDEPS:.o=.lst))$/;"	m
+MCU	Makefile	/^MCU=atmega168$/;"	m
+OBJCOPY	Makefile	/^OBJCOPY=avr-objcopy$/;"	m
+OBJDEPS	Makefile	/^OBJDEPS=$(CFILES:.c=.o)    \\$/;"	m
+OBJDEPS=$(CFILES	Makefile	/^OBJDEPS=$(CFILES:.c=.o)    \\$/;"	t
+OBJDUMP	Makefile	/^OBJDUMP=avr-objdump$/;"	m
+OPTLEVEL	Makefile	/^OPTLEVEL=2$/;"	m
+PRJSRC	Makefile	/^PRJSRC=main.c uart.c$/;"	m
+PROGRAMMER_MCU	Makefile	/^PROGRAMMER_MCU=m168$/;"	m
+PROJECTNAME	Makefile	/^PROJECTNAME=hdctrlr$/;"	m
+REMOVE	Makefile	/^REMOVE=rm -f$/;"	m
+SIZE	Makefile	/^SIZE=avr-size$/;"	m
+SYSCLK	config.h	1;"	d
+TRG	Makefile	/^TRG=$(PROJECTNAME).out$/;"	m
+UART_RX_BUFSZ	config.h	9;"	d
+UART_TX_BUFSZ	config.h	10;"	d
+_BVOFF	macros.h	4;"	d
+_BVON	macros.h	3;"	d
+_OFF	macros.h	2;"	d
+_ON	macros.h	1;"	d
+_VAL	macros.h	5;"	d
+all	Makefile	/^all: $(TRG)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+disasm	Makefile	/^disasm: $(DUMPTRG) stats$/;"	t
+gdbinit	Makefile	/^gdbinit: $(GDBINITFILE)$/;"	t
+hex	Makefile	/^hex: $(HEXTRG)$/;"	t
+install	Makefile	/^install: writeflash$/;"	t
+main	main.c	/^int main(void) {$/;"	f
+stats	Makefile	/^stats: $(TRG)$/;"	t
+uart_data_rdy	uart.c	/^uint8_t uart_data_rdy(void) {$/;"	f
+uart_init	uart.c	/^void uart_init(void) {$/;"	f
+uart_rx	uart.c	/^uint8_t uart_rx(void) {$/;"	f
+uart_rxbuf	main.c	/^volatile uint8_t uart_rxbuf[UART_RX_BUFSZ];$/;"	v
+uart_rxbuf_count	main.c	/^volatile uint8_t uart_rxbuf_count = 0;$/;"	v
+uart_rxbuf_iptr	main.c	/^volatile uint8_t *uart_rxbuf_iptr = uart_rxbuf;$/;"	v
+uart_rxbuf_optr	main.c	/^volatile uint8_t *uart_rxbuf_optr = uart_rxbuf;$/;"	v
+uart_tx	uart.c	/^void uart_tx(uint8_t data) {$/;"	f
+uart_txbuf	main.c	/^volatile uint8_t uart_txbuf[UART_TX_BUFSZ];$/;"	v
+uart_txbuf_count	main.c	/^volatile uint8_t uart_txbuf_count = 0;$/;"	v
+uart_txbuf_iptr	main.c	/^volatile uint8_t *uart_txbuf_iptr = uart_txbuf;$/;"	v
+uart_txbuf_optr	main.c	/^volatile uint8_t *uart_txbuf_optr = uart_txbuf;$/;"	v
+writeflash	Makefile	/^writeflash: hex$/;"	t
+writefuse	Makefile	/^writefuse:$/;"	t
