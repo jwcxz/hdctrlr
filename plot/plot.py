@@ -1,5 +1,8 @@
 #!/usr/bin/env python2
 
+# modified by jwc for displaying 3 sources of data from serial and refreshing
+# every 50ms instead of 100
+
 """
 This demo demonstrates how to draw a dynamic mpl (matplotlib) 
 plot in a wxPython application.
