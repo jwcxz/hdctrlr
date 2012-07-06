@@ -82,17 +82,17 @@ AVR_EFUSE=0xf9
 
 # Name of our project
 # (use a single word, e.g. 'myproject')
-PROJECTNAME=hdctrlr
+PROJECTNAME=usbmouse
 
 # Source files
 # List C/C++/Assembly source files:
 # (list all files to compile, e.g. 'a.c b.cpp as.S'):
 # Use .cc, .cpp or .C suffix for C++ files, use .S 
 # (NOT .s !!!) for assembly source code files.
-PRJSRC=main.c uart.c
+PRJSRC=main.c ../uart.c ../lib/usbdrv/usbdrv.c ../lib/usbdrv/usbdrvasm.S ../lib/usbdrv/oddebug.c
 
 # additional includes (e.g. -I/path/to/mydir)
-INC=
+INC=-I../ -I../lib/usbdrv
 
 # libraries to link in (e.g. -lmylib)
 LIBS=

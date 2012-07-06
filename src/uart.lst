@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccXEQAeH.s 			page 1
+GAS LISTING /tmp/ccmlUdCC.s 			page 1
 
 
    1               		.file	"uart.c"
@@ -7,8 +7,8 @@ GAS LISTING /tmp/ccXEQAeH.s 			page 1
    4               	__SREG__ = 0x3f
    5               	__tmp_reg__ = 0
    6               	__zero_reg__ = 1
-   7               		.stabs	"/home/j/projects/hdctrl/src/",100,0,2,.Ltext0
-   8               		.stabs	"uart.c",100,0,2,.Ltext0
+   7               		.stabs	"/home/j/projects/hdctrl/src/usbmouse/",100,0,2,.Ltext0
+   8               		.stabs	"../uart.c",100,0,2,.Ltext0
    9               		.text
   10               	.Ltext0:
   11               		.stabs	"gcc2_compiled.",60,0,0,0
@@ -27,312 +27,318 @@ GAS LISTING /tmp/ccXEQAeH.s 			page 1
   24               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
   25               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
   26               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
-  27               		.stabs	"uart.h",130,0,0,0
-  28               		.stabs	"main.h",130,0,0,0
-  29               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/inttypes.h",130,0,0,0
-  30               		.stabs	"/usr/lib/gcc/avr/4.7.1/include/stdint.h",130,0,0,0
-  31               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/stdint.h",130,0,0,0
-  32               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
-  33               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
-  34               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
-  35               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
-  36               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
-  37               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
-  38               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
-  39               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
-  40               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
-  41               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
-  42               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
-  43               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
-  44               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
-  45               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
-  46               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
-  47               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
-  48               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
-  49               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
-  50               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
-  51               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
-  52               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
-  53               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
-  54               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
-  55               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
-  56               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
-  57               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
-GAS LISTING /tmp/ccXEQAeH.s 			page 2
+  27               		.stabs	"../uart.h",130,0,0,0
+  28               		.stabs	"./main.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/avr/wdt.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/avr/io.h",130,0,0,0
+  31               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/avr/sfr_defs.h",130,0,0,0
+  32               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/inttypes.h",130,0,0,0
+  33               		.stabs	"/usr/lib/gcc/avr/4.7.1/include/stdint.h",130,0,0,0
+  34               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/stdint.h",130,0,0,0
+  35               		.stabs	"int8_t:t(8,1)=(0,10)",128,0,121,0
+  36               		.stabs	"uint8_t:t(8,2)=(0,11)",128,0,122,0
+  37               		.stabs	"int16_t:t(8,3)=(0,1)",128,0,123,0
+  38               		.stabs	"uint16_t:t(8,4)=(0,4)",128,0,124,0
+  39               		.stabs	"int32_t:t(8,5)=(0,3)",128,0,125,0
+  40               		.stabs	"uint32_t:t(8,6)=(0,5)",128,0,126,0
+  41               		.stabs	"int64_t:t(8,7)=(0,6)",128,0,128,0
+  42               		.stabs	"uint64_t:t(8,8)=(0,7)",128,0,129,0
+  43               		.stabs	"intptr_t:t(8,9)=(8,3)",128,0,142,0
+  44               		.stabs	"uintptr_t:t(8,10)=(8,4)",128,0,147,0
+  45               		.stabs	"int_least8_t:t(8,11)=(8,1)",128,0,159,0
+  46               		.stabs	"uint_least8_t:t(8,12)=(8,2)",128,0,164,0
+  47               		.stabs	"int_least16_t:t(8,13)=(8,3)",128,0,169,0
+  48               		.stabs	"uint_least16_t:t(8,14)=(8,4)",128,0,174,0
+  49               		.stabs	"int_least32_t:t(8,15)=(8,5)",128,0,179,0
+  50               		.stabs	"uint_least32_t:t(8,16)=(8,6)",128,0,184,0
+  51               		.stabs	"int_least64_t:t(8,17)=(8,7)",128,0,192,0
+  52               		.stabs	"uint_least64_t:t(8,18)=(8,8)",128,0,199,0
+  53               		.stabs	"int_fast8_t:t(8,19)=(8,1)",128,0,213,0
+  54               		.stabs	"uint_fast8_t:t(8,20)=(8,2)",128,0,218,0
+  55               		.stabs	"int_fast16_t:t(8,21)=(8,3)",128,0,223,0
+  56               		.stabs	"uint_fast16_t:t(8,22)=(8,4)",128,0,228,0
+  57               		.stabs	"int_fast32_t:t(8,23)=(8,5)",128,0,233,0
+GAS LISTING /tmp/ccmlUdCC.s 			page 2
 
 
-  58               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
-  59               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
-  60               		.stabn	162,0,0,0
-  61               		.stabn	162,0,0,0
-  62               		.stabs	"int_farptr_t:t(3,1)=(5,5)",128,0,77,0
-  63               		.stabs	"uint_farptr_t:t(3,2)=(5,6)",128,0,81,0
+  58               		.stabs	"uint_fast32_t:t(8,24)=(8,6)",128,0,238,0
+  59               		.stabs	"int_fast64_t:t(8,25)=(8,7)",128,0,246,0
+  60               		.stabs	"uint_fast64_t:t(8,26)=(8,8)",128,0,253,0
+  61               		.stabs	"intmax_t:t(8,27)=(8,7)",128,0,273,0
+  62               		.stabs	"uintmax_t:t(8,28)=(8,8)",128,0,278,0
+  63               		.stabn	162,0,0,0
   64               		.stabn	162,0,0,0
-  65               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/avr/io.h",130,0,0,0
-  66               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/avr/fuse.h",130,0,0,0
-  67               		.stabs	"__fuse_t:t(7,1)=(7,2)=s3low:(0,11),0,8;high:(0,11),8,8;extended:(0,11),16,8;;",128,0,244,0
+  65               		.stabs	"int_farptr_t:t(6,1)=(8,5)",128,0,77,0
+  66               		.stabs	"uint_farptr_t:t(6,2)=(8,6)",128,0,81,0
+  67               		.stabn	162,0,0,0
   68               		.stabn	162,0,0,0
-  69               		.stabn	162,0,0,0
-  70               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/avr/pgmspace.h",130,0,0,0
-  71               		.stabs	"/usr/lib/gcc/avr/4.7.1/include/stddef.h",130,0,0,0
-  72               		.stabs	"size_t:t(9,1)=(0,4)",128,0,213,0
+  69               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/avr/fuse.h",130,0,0,0
+  70               		.stabs	"__fuse_t:t(9,1)=(9,2)=s3low:(0,11),0,8;high:(0,11),8,8;extended:(0,11),16,8;;",128,0,244,0
+  71               		.stabn	162,0,0,0
+  72               		.stabn	162,0,0,0
   73               		.stabn	162,0,0,0
-  74               		.stabn	162,0,0,0
-  75               		.stabn	162,0,0,0
-  76               		.stabn	162,0,0,0
-  77               		.stabs	"uart_init:F(0,15)",36,0,3,uart_init
-  78               	.global	uart_init
-  79               		.type	uart_init, @function
-  80               	uart_init:
-  81               		.stabd	46,0,0
-   1:uart.c        **** #include "uart.h"
-   2:uart.c        **** 
-   3:uart.c        **** void uart_init(void) {
-  82               		.stabn	68,0,3,.LM0-.LFBB1
-  83               	.LM0:
-  84               	.LFBB1:
-  85               	/* prologue: function */
-  86               	/* frame size = 0 */
-  87               	/* stack size = 0 */
-  88               	.L__stack_usage = 0
-   4:uart.c        **** 	UBRR0H = (unsigned char) (BAUD_PRESCALE>>8);
-  89               		.stabn	68,0,4,.LM1-.LFBB1
-  90               	.LM1:
-  91 0000 1092 C500 		sts 197,__zero_reg__
-   5:uart.c        **** 	UBRR0L = (unsigned char) (BAUD_PRESCALE&0xFF);
-  92               		.stabn	68,0,5,.LM2-.LFBB1
-  93               	.LM2:
-  94 0004 80E4      		ldi r24,lo8(64)
-  95 0006 8093 C400 		sts 196,r24
-   6:uart.c        ****     UCSR0A = ( BAUD_DOUBLE << U2X0 );
-  96               		.stabn	68,0,6,.LM3-.LFBB1
-  97               	.LM3:
-  98 000a 82E0      		ldi r24,lo8(2)
-  99 000c 8093 C000 		sts 192,r24
-   7:uart.c        **** 	UCSR0B = ( _BV(RXEN0) | _BV(TXEN0) );
- 100               		.stabn	68,0,7,.LM4-.LFBB1
- 101               	.LM4:
- 102 0010 88E1      		ldi r24,lo8(24)
- 103 0012 8093 C100 		sts 193,r24
-   8:uart.c        **** 	UCSR0C = ( _BV(UCSZ01) | _BV(UCSZ00) );
- 104               		.stabn	68,0,8,.LM5-.LFBB1
- 105               	.LM5:
- 106 0016 86E0      		ldi r24,lo8(6)
-GAS LISTING /tmp/ccXEQAeH.s 			page 3
+  74               		.stabs	"/usr/lib/gcc/avr/4.7.1/../../../../avr/include/avr/pgmspace.h",130,0,0,0
+  75               		.stabs	"/usr/lib/gcc/avr/4.7.1/include/stddef.h",130,0,0,0
+  76               		.stabs	"size_t:t(11,1)=(0,4)",128,0,213,0
+  77               		.stabn	162,0,0,0
+  78               		.stabn	162,0,0,0
+  79               		.stabs	"state:T(2,1)=@s8;enone:0,yellow:1,green:2,blue:3,;",128,0,0,0
+  80               		.stabs	"action:T(2,2)=@s8;eidle:0,cw:1,ccw:2,;",128,0,0,0
+  81               		.stabn	162,0,0,0
+  82               		.stabn	162,0,0,0
+  83               		.stabs	"uart_init:F(0,15)",36,0,3,uart_init
+  84               	.global	uart_init
+  85               		.type	uart_init, @function
+  86               	uart_init:
+  87               		.stabd	46,0,0
+   1:../uart.c     **** #include "uart.h"
+   2:../uart.c     **** 
+   3:../uart.c     **** void uart_init(void) {
+  88               		.stabn	68,0,3,.LM0-.LFBB1
+  89               	.LM0:
+  90               	.LFBB1:
+  91               	/* prologue: function */
+  92               	/* frame size = 0 */
+  93               	/* stack size = 0 */
+  94               	.L__stack_usage = 0
+   4:../uart.c     **** 	UBRR0H = (unsigned char) (BAUD_PRESCALE>>8);
+  95               		.stabn	68,0,4,.LM1-.LFBB1
+  96               	.LM1:
+  97 0000 1092 C500 		sts 197,__zero_reg__
+   5:../uart.c     **** 	UBRR0L = (unsigned char) (BAUD_PRESCALE&0xFF);
+  98               		.stabn	68,0,5,.LM2-.LFBB1
+  99               	.LM2:
+ 100 0004 80E4      		ldi r24,lo8(64)
+ 101 0006 8093 C400 		sts 196,r24
+   6:../uart.c     ****     UCSR0A = ( BAUD_DOUBLE << U2X0 );
+ 102               		.stabn	68,0,6,.LM3-.LFBB1
+ 103               	.LM3:
+ 104 000a 82E0      		ldi r24,lo8(2)
+ 105 000c 8093 C000 		sts 192,r24
+   7:../uart.c     **** 	UCSR0B = ( _BV(RXEN0) | _BV(TXEN0) );
+ 106               		.stabn	68,0,7,.LM4-.LFBB1
+ 107               	.LM4:
+GAS LISTING /tmp/ccmlUdCC.s 			page 3
 
 
- 107 0018 8093 C200 		sts 194,r24
-   9:uart.c        **** 
-  10:uart.c        ****     DDRD |= _BV(PD1);
- 108               		.stabn	68,0,10,.LM6-.LFBB1
- 109               	.LM6:
- 110 001c 519A      		sbi 0xa,1
- 111 001e 0895      		ret
- 112               		.size	uart_init, .-uart_init
- 113               	.Lscope1:
- 114               		.stabs	"",36,0,0,.Lscope1-.LFBB1
- 115               		.stabd	78,0,0
- 116               		.stabs	"uart_rx:F(5,2)",36,0,16,uart_rx
- 117               	.global	uart_rx
- 118               		.type	uart_rx, @function
- 119               	uart_rx:
- 120               		.stabd	46,0,0
-  11:uart.c        **** 
-  12:uart.c        ****     // enable even parity
-  13:uart.c        ****     //UCSR0C |= _BV(UPM01);
-  14:uart.c        **** }
-  15:uart.c        **** 
-  16:uart.c        **** uint8_t uart_rx(void) {
- 121               		.stabn	68,0,16,.LM7-.LFBB2
- 122               	.LM7:
- 123               	.LFBB2:
- 124               	/* prologue: function */
- 125               	/* frame size = 0 */
- 126               	/* stack size = 0 */
- 127               	.L__stack_usage = 0
- 128               	.L3:
-  17:uart.c        **** 	while(!(UCSR0A & (1 << RXC0))) ;
- 129               		.stabn	68,0,17,.LM8-.LFBB2
- 130               	.LM8:
- 131 0020 8091 C000 		lds r24,192
- 132 0024 87FF      		sbrs r24,7
- 133 0026 00C0      		rjmp .L3
-  18:uart.c        **** 	return UDR0;
- 134               		.stabn	68,0,18,.LM9-.LFBB2
- 135               	.LM9:
- 136 0028 8091 C600 		lds r24,198
-  19:uart.c        **** }
- 137               		.stabn	68,0,19,.LM10-.LFBB2
- 138               	.LM10:
- 139 002c 0895      		ret
- 140               		.size	uart_rx, .-uart_rx
- 141               	.Lscope2:
- 142               		.stabs	"",36,0,0,.Lscope2-.LFBB2
- 143               		.stabd	78,0,0
- 144               		.stabs	"uart_tx:F(0,15)",36,0,21,uart_tx
- 145               		.stabs	"data:P(5,2)",64,0,21,24
- 146               	.global	uart_tx
- 147               		.type	uart_tx, @function
- 148               	uart_tx:
- 149               		.stabd	46,0,0
-  20:uart.c        **** 
-  21:uart.c        **** void uart_tx(uint8_t data) {
- 150               		.stabn	68,0,21,.LM11-.LFBB3
-GAS LISTING /tmp/ccXEQAeH.s 			page 4
+ 108 0010 88E1      		ldi r24,lo8(24)
+ 109 0012 8093 C100 		sts 193,r24
+   8:../uart.c     **** 	UCSR0C = ( _BV(UCSZ01) | _BV(UCSZ00) );
+ 110               		.stabn	68,0,8,.LM5-.LFBB1
+ 111               	.LM5:
+ 112 0016 86E0      		ldi r24,lo8(6)
+ 113 0018 8093 C200 		sts 194,r24
+   9:../uart.c     **** 
+  10:../uart.c     ****     DDRD |= _BV(PD1);
+ 114               		.stabn	68,0,10,.LM6-.LFBB1
+ 115               	.LM6:
+ 116 001c 519A      		sbi 0xa,1
+ 117 001e 0895      		ret
+ 118               		.size	uart_init, .-uart_init
+ 119               	.Lscope1:
+ 120               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 121               		.stabd	78,0,0
+ 122               		.stabs	"uart_rx:F(8,2)",36,0,16,uart_rx
+ 123               	.global	uart_rx
+ 124               		.type	uart_rx, @function
+ 125               	uart_rx:
+ 126               		.stabd	46,0,0
+  11:../uart.c     **** 
+  12:../uart.c     ****     // enable even parity
+  13:../uart.c     ****     //UCSR0C |= _BV(UPM01);
+  14:../uart.c     **** }
+  15:../uart.c     **** 
+  16:../uart.c     **** uint8_t uart_rx(void) {
+ 127               		.stabn	68,0,16,.LM7-.LFBB2
+ 128               	.LM7:
+ 129               	.LFBB2:
+ 130               	/* prologue: function */
+ 131               	/* frame size = 0 */
+ 132               	/* stack size = 0 */
+ 133               	.L__stack_usage = 0
+ 134               	.L3:
+  17:../uart.c     **** 	while(!(UCSR0A & (1 << RXC0))) ;
+ 135               		.stabn	68,0,17,.LM8-.LFBB2
+ 136               	.LM8:
+ 137 0020 8091 C000 		lds r24,192
+ 138 0024 87FF      		sbrs r24,7
+ 139 0026 00C0      		rjmp .L3
+  18:../uart.c     **** 	return UDR0;
+ 140               		.stabn	68,0,18,.LM9-.LFBB2
+ 141               	.LM9:
+ 142 0028 8091 C600 		lds r24,198
+  19:../uart.c     **** }
+ 143               		.stabn	68,0,19,.LM10-.LFBB2
+ 144               	.LM10:
+ 145 002c 0895      		ret
+ 146               		.size	uart_rx, .-uart_rx
+ 147               	.Lscope2:
+ 148               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 149               		.stabd	78,0,0
+ 150               		.stabs	"uart_tx:F(0,15)",36,0,21,uart_tx
+ 151               		.stabs	"data:P(8,2)",64,0,21,24
+ 152               	.global	uart_tx
+GAS LISTING /tmp/ccmlUdCC.s 			page 4
 
 
- 151               	.LM11:
- 152               	.LFBB3:
- 153               	/* prologue: function */
- 154               	/* frame size = 0 */
- 155               	/* stack size = 0 */
- 156               	.L__stack_usage = 0
- 157               	.L7:
-  22:uart.c        **** 	while((UCSR0A & (1 << UDRE0)) == 0) ;
- 158               		.stabn	68,0,22,.LM12-.LFBB3
- 159               	.LM12:
- 160 002e 9091 C000 		lds r25,192
- 161 0032 95FF      		sbrs r25,5
- 162 0034 00C0      		rjmp .L7
-  23:uart.c        **** 	UDR0 = data;
- 163               		.stabn	68,0,23,.LM13-.LFBB3
- 164               	.LM13:
- 165 0036 8093 C600 		sts 198,r24
- 166 003a 0895      		ret
- 167               		.size	uart_tx, .-uart_tx
- 168               	.Lscope3:
- 169               		.stabs	"",36,0,0,.Lscope3-.LFBB3
- 170               		.stabd	78,0,0
- 171               		.stabs	"uart_tx_hex:F(0,15)",36,0,28,uart_tx_hex
- 172               		.stabs	"data:P(5,2)",64,0,28,24
- 173               	.global	uart_tx_hex
- 174               		.type	uart_tx_hex, @function
- 175               	uart_tx_hex:
- 176               		.stabd	46,0,0
-  24:uart.c        **** 
-  25:uart.c        **** 	return;
-  26:uart.c        **** }
-  27:uart.c        **** 
-  28:uart.c        **** void uart_tx_hex(uint8_t data) {
- 177               		.stabn	68,0,28,.LM14-.LFBB4
- 178               	.LM14:
- 179               	.LFBB4:
- 180               	/* prologue: function */
- 181               	/* frame size = 0 */
- 182               	/* stack size = 0 */
- 183               	.L__stack_usage = 0
-  29:uart.c        ****     uint8_t lo, hi;
-  30:uart.c        **** 
-  31:uart.c        ****     hi = (data >> 4) & 0x0F;
- 184               		.stabn	68,0,31,.LM15-.LFBB4
- 185               	.LM15:
- 186 003c 282F      		mov r18,r24
- 187 003e 2295      		swap r18
- 188 0040 2F70      		andi r18,lo8(15)
-  32:uart.c        ****     lo = data & 0x0F;
- 189               		.stabn	68,0,32,.LM16-.LFBB4
- 190               	.LM16:
- 191 0042 8F70      		andi r24,lo8(15)
-  33:uart.c        **** 
-  34:uart.c        ****     if ( hi < 0xA ) {
- 192               		.stabn	68,0,34,.LM17-.LFBB4
- 193               	.LM17:
- 194 0044 2A30      		cpi r18,lo8(10)
-GAS LISTING /tmp/ccXEQAeH.s 			page 5
+ 153               		.type	uart_tx, @function
+ 154               	uart_tx:
+ 155               		.stabd	46,0,0
+  20:../uart.c     **** 
+  21:../uart.c     **** void uart_tx(uint8_t data) {
+ 156               		.stabn	68,0,21,.LM11-.LFBB3
+ 157               	.LM11:
+ 158               	.LFBB3:
+ 159               	/* prologue: function */
+ 160               	/* frame size = 0 */
+ 161               	/* stack size = 0 */
+ 162               	.L__stack_usage = 0
+ 163               	.L7:
+  22:../uart.c     **** 	while((UCSR0A & (1 << UDRE0)) == 0) ;
+ 164               		.stabn	68,0,22,.LM12-.LFBB3
+ 165               	.LM12:
+ 166 002e 9091 C000 		lds r25,192
+ 167 0032 95FF      		sbrs r25,5
+ 168 0034 00C0      		rjmp .L7
+  23:../uart.c     **** 	UDR0 = data;
+ 169               		.stabn	68,0,23,.LM13-.LFBB3
+ 170               	.LM13:
+ 171 0036 8093 C600 		sts 198,r24
+ 172 003a 0895      		ret
+ 173               		.size	uart_tx, .-uart_tx
+ 174               	.Lscope3:
+ 175               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 176               		.stabd	78,0,0
+ 177               		.stabs	"uart_tx_hex:F(0,15)",36,0,28,uart_tx_hex
+ 178               		.stabs	"data:P(8,2)",64,0,28,24
+ 179               	.global	uart_tx_hex
+ 180               		.type	uart_tx_hex, @function
+ 181               	uart_tx_hex:
+ 182               		.stabd	46,0,0
+  24:../uart.c     **** 
+  25:../uart.c     **** 	return;
+  26:../uart.c     **** }
+  27:../uart.c     **** 
+  28:../uart.c     **** void uart_tx_hex(uint8_t data) {
+ 183               		.stabn	68,0,28,.LM14-.LFBB4
+ 184               	.LM14:
+ 185               	.LFBB4:
+ 186               	/* prologue: function */
+ 187               	/* frame size = 0 */
+ 188               	/* stack size = 0 */
+ 189               	.L__stack_usage = 0
+  29:../uart.c     ****     uint8_t lo, hi;
+  30:../uart.c     **** 
+  31:../uart.c     ****     hi = (data >> 4) & 0x0F;
+ 190               		.stabn	68,0,31,.LM15-.LFBB4
+ 191               	.LM15:
+ 192 003c 282F      		mov r18,r24
+ 193 003e 2295      		swap r18
+ 194 0040 2F70      		andi r18,lo8(15)
+  32:../uart.c     ****     lo = data & 0x0F;
+ 195               		.stabn	68,0,32,.LM16-.LFBB4
+ 196               	.LM16:
+GAS LISTING /tmp/ccmlUdCC.s 			page 5
 
 
- 195 0046 00F4      		brsh .L13
-  35:uart.c        ****         hi |= 0x30;
- 196               		.stabn	68,0,35,.LM18-.LFBB4
- 197               	.LM18:
- 198 0048 2063      		ori r18,lo8(48)
- 199               	.L14:
-  36:uart.c        ****     } else {
-  37:uart.c        ****         hi -= 9;
-  38:uart.c        ****         hi |= 0x40;
-  39:uart.c        ****     }
-  40:uart.c        **** 
-  41:uart.c        ****     if ( lo < 0xA ) {
- 200               		.stabn	68,0,41,.LM19-.LFBB4
- 201               	.LM19:
- 202 004a 8A30      		cpi r24,lo8(10)
- 203 004c 00F4      		brsh .L15
-  42:uart.c        ****         lo |= 0x30;
- 204               		.stabn	68,0,42,.LM20-.LFBB4
- 205               	.LM20:
- 206 004e 8063      		ori r24,lo8(48)
- 207               	.L23:
-  43:uart.c        ****     } else {
-  44:uart.c        ****         lo -= 9;
-  45:uart.c        ****         lo |= 0x40;
-  46:uart.c        ****     }
-  47:uart.c        **** 
-  48:uart.c        **** 	while((UCSR0A & (1 << UDRE0)) == 0) ;
- 208               		.stabn	68,0,48,.LM21-.LFBB4
- 209               	.LM21:
- 210 0050 9091 C000 		lds r25,192
- 211 0054 95FF      		sbrs r25,5
- 212 0056 00C0      		rjmp .L23
-  49:uart.c        **** 	UDR0 = hi;
- 213               		.stabn	68,0,49,.LM22-.LFBB4
- 214               	.LM22:
- 215 0058 2093 C600 		sts 198,r18
- 216               	.L18:
-  50:uart.c        **** 
-  51:uart.c        **** 	while((UCSR0A & (1 << UDRE0)) == 0) ;
- 217               		.stabn	68,0,51,.LM23-.LFBB4
- 218               	.LM23:
- 219 005c 9091 C000 		lds r25,192
- 220 0060 95FF      		sbrs r25,5
- 221 0062 00C0      		rjmp .L18
-  52:uart.c        **** 	UDR0 = lo;
- 222               		.stabn	68,0,52,.LM24-.LFBB4
- 223               	.LM24:
- 224 0064 8093 C600 		sts 198,r24
- 225 0068 0895      		ret
- 226               	.L15:
-  44:uart.c        ****         lo -= 9;
- 227               		.stabn	68,0,44,.LM25-.LFBB4
- 228               	.LM25:
- 229 006a 8950      		subi r24,lo8(-(-9))
-  45:uart.c        ****         lo |= 0x40;
- 230               		.stabn	68,0,45,.LM26-.LFBB4
- 231               	.LM26:
-GAS LISTING /tmp/ccXEQAeH.s 			page 6
+ 197 0042 8F70      		andi r24,lo8(15)
+  33:../uart.c     **** 
+  34:../uart.c     ****     if ( hi < 0xA ) {
+ 198               		.stabn	68,0,34,.LM17-.LFBB4
+ 199               	.LM17:
+ 200 0044 2A30      		cpi r18,lo8(10)
+ 201 0046 00F4      		brsh .L13
+  35:../uart.c     ****         hi |= 0x30;
+ 202               		.stabn	68,0,35,.LM18-.LFBB4
+ 203               	.LM18:
+ 204 0048 2063      		ori r18,lo8(48)
+ 205               	.L14:
+  36:../uart.c     ****     } else {
+  37:../uart.c     ****         hi -= 9;
+  38:../uart.c     ****         hi |= 0x40;
+  39:../uart.c     ****     }
+  40:../uart.c     **** 
+  41:../uart.c     ****     if ( lo < 0xA ) {
+ 206               		.stabn	68,0,41,.LM19-.LFBB4
+ 207               	.LM19:
+ 208 004a 8A30      		cpi r24,lo8(10)
+ 209 004c 00F4      		brsh .L15
+  42:../uart.c     ****         lo |= 0x30;
+ 210               		.stabn	68,0,42,.LM20-.LFBB4
+ 211               	.LM20:
+ 212 004e 8063      		ori r24,lo8(48)
+ 213               	.L23:
+  43:../uart.c     ****     } else {
+  44:../uart.c     ****         lo -= 9;
+  45:../uart.c     ****         lo |= 0x40;
+  46:../uart.c     ****     }
+  47:../uart.c     **** 
+  48:../uart.c     **** 	while((UCSR0A & (1 << UDRE0)) == 0) ;
+ 214               		.stabn	68,0,48,.LM21-.LFBB4
+ 215               	.LM21:
+ 216 0050 9091 C000 		lds r25,192
+ 217 0054 95FF      		sbrs r25,5
+ 218 0056 00C0      		rjmp .L23
+  49:../uart.c     **** 	UDR0 = hi;
+ 219               		.stabn	68,0,49,.LM22-.LFBB4
+ 220               	.LM22:
+ 221 0058 2093 C600 		sts 198,r18
+ 222               	.L18:
+  50:../uart.c     **** 
+  51:../uart.c     **** 	while((UCSR0A & (1 << UDRE0)) == 0) ;
+ 223               		.stabn	68,0,51,.LM23-.LFBB4
+ 224               	.LM23:
+ 225 005c 9091 C000 		lds r25,192
+ 226 0060 95FF      		sbrs r25,5
+ 227 0062 00C0      		rjmp .L18
+  52:../uart.c     **** 	UDR0 = lo;
+ 228               		.stabn	68,0,52,.LM24-.LFBB4
+ 229               	.LM24:
+ 230 0064 8093 C600 		sts 198,r24
+ 231 0068 0895      		ret
+ 232               	.L15:
+  44:../uart.c     ****         lo -= 9;
+GAS LISTING /tmp/ccmlUdCC.s 			page 6
 
 
- 232 006c 8064      		ori r24,lo8(64)
- 233 006e 00C0      		rjmp .L23
- 234               	.L13:
-  37:uart.c        ****         hi -= 9;
- 235               		.stabn	68,0,37,.LM27-.LFBB4
- 236               	.LM27:
- 237 0070 2950      		subi r18,lo8(-(-9))
-  38:uart.c        ****         hi |= 0x40;
- 238               		.stabn	68,0,38,.LM28-.LFBB4
- 239               	.LM28:
- 240 0072 2064      		ori r18,lo8(64)
- 241 0074 00C0      		rjmp .L14
- 242               		.size	uart_tx_hex, .-uart_tx_hex
- 243               	.Lscope4:
- 244               		.stabs	"",36,0,0,.Lscope4-.LFBB4
- 245               		.stabd	78,0,0
- 246               		.stabs	"",100,0,0,.Letext0
- 247               	.Letext0:
- 248               		.ident	"GCC: (GNU) 4.7.1"
-GAS LISTING /tmp/ccXEQAeH.s 			page 7
+ 233               		.stabn	68,0,44,.LM25-.LFBB4
+ 234               	.LM25:
+ 235 006a 8950      		subi r24,lo8(-(-9))
+  45:../uart.c     ****         lo |= 0x40;
+ 236               		.stabn	68,0,45,.LM26-.LFBB4
+ 237               	.LM26:
+ 238 006c 8064      		ori r24,lo8(64)
+ 239 006e 00C0      		rjmp .L23
+ 240               	.L13:
+  37:../uart.c     ****         hi -= 9;
+ 241               		.stabn	68,0,37,.LM27-.LFBB4
+ 242               	.LM27:
+ 243 0070 2950      		subi r18,lo8(-(-9))
+  38:../uart.c     ****         hi |= 0x40;
+ 244               		.stabn	68,0,38,.LM28-.LFBB4
+ 245               	.LM28:
+ 246 0072 2064      		ori r18,lo8(64)
+ 247 0074 00C0      		rjmp .L14
+ 248               		.size	uart_tx_hex, .-uart_tx_hex
+ 249               	.Lscope4:
+ 250               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 251               		.stabd	78,0,0
+ 252               		.stabs	"",100,0,0,.Letext0
+ 253               	.Letext0:
+ 254               		.ident	"GCC: (GNU) 4.7.1"
+GAS LISTING /tmp/ccmlUdCC.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 uart.c
-     /tmp/ccXEQAeH.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccXEQAeH.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccXEQAeH.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccXEQAeH.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccXEQAeH.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccXEQAeH.s:80     .text:0000000000000000 uart_init
-     /tmp/ccXEQAeH.s:119    .text:0000000000000020 uart_rx
-     /tmp/ccXEQAeH.s:148    .text:000000000000002e uart_tx
-     /tmp/ccXEQAeH.s:175    .text:000000000000003c uart_tx_hex
+     /tmp/ccmlUdCC.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccmlUdCC.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccmlUdCC.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccmlUdCC.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccmlUdCC.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccmlUdCC.s:86     .text:0000000000000000 uart_init
+     /tmp/ccmlUdCC.s:125    .text:0000000000000020 uart_rx
+     /tmp/ccmlUdCC.s:154    .text:000000000000002e uart_tx
+     /tmp/ccmlUdCC.s:181    .text:000000000000003c uart_tx_hex
 
 NO UNDEFINED SYMBOLS

@@ -20,7 +20,7 @@ Address of section .data set to 0x800100
 LOAD /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/crtm168.o
 LOAD /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/libm.a
 LOAD main.o
-LOAD uart.o
+LOAD ../uart.o
 LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
 LOAD /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/libc.a
 LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
@@ -115,7 +115,7 @@ LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x15e
+.text           0x0000000000000000      0x1e2
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/crtm168.o
                 0x0000000000000000                __vectors
@@ -194,7 +194,7 @@ LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
                 0x000000000000007c                __vector_18
                 0x000000000000007c                __vector_20
  .text          0x0000000000000080        0x0 main.o
- .text          0x0000000000000080       0x76 uart.o
+ .text          0x0000000000000080       0x76 ../uart.o
                 0x0000000000000080                uart_init
                 0x00000000000000a0                uart_rx
                 0x00000000000000ae                uart_tx
@@ -202,24 +202,24 @@ LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
  .text          0x00000000000000f6        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
                 0x00000000000000f6                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x00000000000000f6       0x64 main.o
+ .text.startup  0x00000000000000f6       0xe8 main.o
                 0x00000000000000f6                main
  .text.libgcc.mul
-                0x000000000000015a        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+                0x00000000000001de        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
  .text.libgcc.div
-                0x000000000000015a        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
- .text.libgcc   0x000000000000015a        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+                0x00000000000001de        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x00000000000001de        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x000000000000015a        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+                0x00000000000001de        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x000000000000015a        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+                0x00000000000001de        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x000000000000015a        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
-                0x000000000000015a                . = ALIGN (0x2)
+                0x00000000000001de        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+                0x00000000000001de                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000000000015a        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
-                0x000000000000015a                exit
-                0x000000000000015a                _exit
+ .fini9         0x00000000000001de        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+                0x00000000000001de                exit
+                0x00000000000001de                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -238,16 +238,16 @@ LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000000000015a        0x4 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+ .fini0         0x00000000000001de        0x4 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x000000000000015e                _etext = .
+                0x00000000000001e2                _etext = .
 
-.data           0x0000000000800100        0x0 load address 0x000000000000015e
+.data           0x0000000000800100        0x0 load address 0x00000000000001e2
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/crtm168.o
  .data          0x0000000000800100        0x0 main.o
- .data          0x0000000000800100        0x0 uart.o
+ .data          0x0000000000800100        0x0 ../uart.o
  .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
  *(.data*)
  *(.rodata)
@@ -262,13 +262,13 @@ LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
  *(.bss)
  .bss           0x0000000000800100        0x0 /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/crtm168.o
  .bss           0x0000000000800100        0x0 main.o
- .bss           0x0000000000800100        0x0 uart.o
+ .bss           0x0000000000800100        0x0 ../uart.o
  .bss           0x0000000000800100        0x0 /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
  *(.bss*)
  *(COMMON)
                 0x0000000000800100                PROVIDE (__bss_end, .)
-                0x000000000000015e                __data_load_start = LOADADDR (.data)
-                0x000000000000015e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000001e2                __data_load_start = LOADADDR (.data)
+                0x00000000000001e2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0000000000800100        0x0
                 0x0000000000800100                PROVIDE (__noinit_start, .)
@@ -293,19 +293,19 @@ LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x0000000000000000      0xef4
+.stab           0x0000000000000000     0x10b0
  *(.stab)
  .stab          0x0000000000000000      0x6cc /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/crtm168.o
- .stab          0x00000000000006cc      0x42c main.o
-                                        0x438 (size before relaxing)
- .stab          0x0000000000000af8      0x390 uart.o
+ .stab          0x00000000000006cc      0x5dc main.o
+                                        0x5e8 (size before relaxing)
+ .stab          0x0000000000000ca8      0x39c ../uart.o
                                         0x57c (size before relaxing)
- .stab          0x0000000000000e88       0x6c /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
+ .stab          0x0000000000001044       0x6c /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a(_exit.o)
                                          0x78 (size before relaxing)
 
-.stabstr        0x0000000000000000      0x8cd
+.stabstr        0x0000000000000000      0x984
  *(.stabstr)
- .stabstr       0x0000000000000000      0x8cd /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/crtm168.o
+ .stabstr       0x0000000000000000      0x984 /usr/lib/gcc/avr/4.7.1/../../../../avr/lib/avr5/crtm168.o
 
 .stab.excl
  *(.stab.excl)
@@ -323,7 +323,7 @@ LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
  *(.comment)
  .comment       0x0000000000000000       0x11 main.o
                                          0x12 (size before relaxing)
- .comment       0x0000000000000000       0x12 uart.o
+ .comment       0x0000000000000000       0x12 ../uart.o
 
 .debug
  *(.debug)
@@ -364,5 +364,5 @@ LOAD /usr/lib/gcc/avr/4.7.1/avr5/libgcc.a
 
 .debug_macinfo
  *(.debug_macinfo)
-OUTPUT(hdctrlr.out elf32-avr)
+OUTPUT(serialscroll.out elf32-avr)
 LOAD linker stubs

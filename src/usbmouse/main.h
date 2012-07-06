@@ -1,6 +1,9 @@
+#ifndef _MAIN_H
+#define _MAIN_H
 #include "config.h"
 #include "macros.h"
 
+#include <avr/wdt.h>
 #include <inttypes.h>
 #include <util/delay.h>
 #include <avr/io.h>
@@ -8,3 +11,17 @@
 #include <avr/pgmspace.h>
 
 int main(void);
+
+enum state {
+    none,
+    yellow,
+    green,
+    blue
+};
+
+enum action {
+    idle,
+    cw,
+    ccw
+};
+#endif

@@ -10,31 +10,25 @@
 #include "uart.h"
 
 int main(void) {
-    DDRB |= _BV(PB1);
     uint8_t i = 0;
 
     // initialize UART
     uart_init();
 
     // setup ADC
-    ADMUX = _BV(REFS0);
+    ADMUX = _BV(ADLAR) | _BV(REFS0);
     ADCSRA = _BV(ADEN) | _BV(ADPS2) | _BV(ADPS1) | _BV(ADPS0);
 
     while (1) {
         uart_tx(':');
         for ( i=0 ; i<3 ; i++ ) {
-            ADMUX = _BV(REFS0) | i;
+            ADMUX = _BV(ADLAR) | _BV(REFS0) | i;
             ADCSRA |= _BV(ADSC);
             while ( !(ADCSRA & _BV(ADIF)) );
             ADCSRA |= _BV(ADIF);
 
-            uart_tx(ADC);
-
-            //uart_tx_hex(ADC);
-            //uart_tx(' ');
+            uart_tx(ADCH);
         }
-        //uart_tx('\r');
-        //uart_tx('\n');
         _delay_ms(50);
     }
 
