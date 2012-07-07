@@ -1,1 +1,5 @@
 src/vusb-20120109
+*.o
+*.lst
+*.out
+*.swp

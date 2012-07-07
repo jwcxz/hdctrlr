@@ -323,7 +323,6 @@ clean:
 	$(REMOVE) $(LST) $(GDBINITFILE)
 	$(REMOVE) $(GENASMFILES)
 	$(REMOVE) $(HEXTRG)
-	$(REMOVE) firmware.bin firmware.c firmware.cof firmware.eep.hex firmware.hex firmware.obj
 	
 
 

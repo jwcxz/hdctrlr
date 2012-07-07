@@ -1,5 +1,6 @@
 #ifndef _MAIN_H
 #define _MAIN_H
+
 #include "config.h"
 #include "macros.h"
 
@@ -11,16 +12,4 @@
 
 int main(void);
 
-enum state {
-    none,
-    yellow,
-    green,
-    blue
-};
-
-enum action {
-    idle,
-    cw,
-    ccw
-};
 #endif

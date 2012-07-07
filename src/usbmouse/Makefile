@@ -89,7 +89,7 @@ PROJECTNAME=usbmouse
 # (list all files to compile, e.g. 'a.c b.cpp as.S'):
 # Use .cc, .cpp or .C suffix for C++ files, use .S 
 # (NOT .s !!!) for assembly source code files.
-PRJSRC=main.c ../uart.c ../lib/usbdrv/usbdrv.c ../lib/usbdrv/usbdrvasm.S ../lib/usbdrv/oddebug.c
+PRJSRC=main.c ../uart.c ../sampleproc.c ../lib/usbdrv/usbdrv.c ../lib/usbdrv/usbdrvasm.S ../lib/usbdrv/oddebug.c
 
 # additional includes (e.g. -I/path/to/mydir)
 INC=-I../ -I../lib/usbdrv
@@ -323,7 +323,6 @@ clean:
 	$(REMOVE) $(LST) $(GDBINITFILE)
 	$(REMOVE) $(GENASMFILES)
 	$(REMOVE) $(HEXTRG)
-	$(REMOVE) firmware.bin firmware.c firmware.cof firmware.eep.hex firmware.hex firmware.obj
 	
 
 

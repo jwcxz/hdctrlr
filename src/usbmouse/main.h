@@ -12,16 +12,4 @@
 
 int main(void);
 
-enum state {
-    none,
-    yellow,
-    green,
-    blue
-};
-
-enum action {
-    idle,
-    cw,
-    ccw
-};
 #endif
